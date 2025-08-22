@@ -1,0 +1,133 @@
+body {
+    background: url('https://wallpapers.com/images/hd/great-hall-harry-potter-desktop-1920-x-1080-wallpaper-jfxc2ku2jbsny30f.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family:'Garamond', 'Times New Roman', serif;
+    color: #fffbe7;
+    margin: 0;
+    padding: 0;
+    min-width: 1024px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: rgba(34, 34, 34, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+    padding: 40px 50px 30px 50px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.crest {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.4em;
+    letter-spacing: 1.5px;
+    margin: 0;
+    color: #f7d560;
+    text-shadow: 2px 2px 6px #000;
+}
+
+h2 {
+    font-size: 1.3em;
+    margin: 8px 0 0 0;
+    color: #b2a06a;
+    font-weight: normal;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-size: 1.08em;
+    margin-bottom: 7px;
+    color: #f7d560;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1em;
+    background: #2c2c2c;
+    color: #fffbe7;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+input:focus, select:focus {
+    outline: 2px solid #f7d560;
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, #b2a06a, #f7d560);
+    color: #222;
+    font-size: 1.1em;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, #f7d560, #b2a06a);
+}
+
+#confirmation {
+    text-align: center;
+    margin-top: 30px;
+    color: #f7d560;
+    animation: fadeIn 1s;
+}
+
+#confirmation h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.owl-img {
+    width: 200px;
+    margin-top: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #b2a06a;
+    font-size: 0.95em;
+    opacity: 0.7;
+}
+
+@media (max-width: 1023px) {
+    body, .container {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
