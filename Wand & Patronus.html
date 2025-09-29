@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wizarding World - Wand & Patronus Discovery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="magical-particles"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">⚡ The Wizarding World</h1>
+                <nav class="nav">
+                    <button class="nav-btn active" data-section="home">Home</button>
+                    <button class="nav-btn" data-section="wand">Wand Selection</button>
+                    <button class="nav-btn" data-section="patronus">Patronus Discovery</button>
+                    <button class="nav-btn" data-section="results">Your Profile</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero">
+                    <h1 class="hero-title">Welcome to Your Magical Journey</h1>
+                    <p class="hero-description">Discover your perfect wand and reveal your patronus in this enchanting experience inspired by the wizarding world.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn--primary" data-section="wand">Choose Your Wand</button>
+                        <button class="btn btn--outline" data-section="patronus">Discover Your Patronus</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wand Selection Section -->
+        <section id="wand" class="section">
+            <div class="container">
+                <h2 class="section-title">Wand Selection</h2>
+                <p class="section-description">Every wand is unique. Find yours through careful selection or let the magic choose for you.</p>
+                
+                <div class="wand-modes">
+                    <button class="btn btn--secondary active" id="manual-mode">Manual Selection</button>
+                    <button class="btn btn--secondary" id="quiz-mode">Wand Quiz</button>
+                </div>
+
+                <!-- Manual Wand Builder -->
+                <div id="manual-builder" class="wand-builder active">
+                    <div class="wand-options">
+                        <div class="wand-option-group">
+                            <label class="form-label">Wood Type</label>
+                            <select class="form-control" id="wood-select">
+                                <option value="">Select Wood</option>
+                            </select>
+                            <div class="description" id="wood-description"></div>
+                        </div>
+                        
+                        <div class="wand-option-group">
+                            <label class="form-label">Core</label>
+                            <select class="form-control" id="core-select">
+                                <option value="">Select Core</option>
+                            </select>
+                            <div class="description" id="core-description"></div>
+                        </div>
+                        
+                        <div class="wand-option-group">
+                            <label class="form-label">Length</label>
+                            <select class="form-control" id="length-select">
+                                <option value="">Select Length</option>
+                            </select>
+                        </div>
+                        
+                        <div class="wand-option-group">
+                            <label class="form-label">Flexibility</label>
+                            <select class="form-control" id="flexibility-select">
+                                <option value="">Select Flexibility</option>
+                            </select>
+                            <div class="description" id="flexibility-description"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="wand-preview">
+                        <div class="wand-visual">
+                            <div class="wand-stick"></div>
+                            <div class="wand-handle"></div>
+                        </div>
+                        <div class="wand-details" id="wand-details">
+                            <h3>Your Wand</h3>
+                            <p>Select components to see your wand details</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wand Quiz -->
+                <div id="wand-quiz" class="quiz-container hidden">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="wand-progress"></div>
+                        </div>
+                        <span class="progress-text" id="wand-progress-text">Question 1 of 2</span>
+                    </div>
+                    
+                    <div class="quiz-content">
+                        <h3 class="quiz-question" id="wand-question">Loading question...</h3>
+                        <div class="quiz-answers" id="wand-answers">
+                            <!-- Quiz answers will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-result hidden" id="wand-result">
+                        <h3>Your Ideal Wand</h3>
+                        <div class="wand-visual">
+                            <div class="wand-stick"></div>
+                            <div class="wand-handle"></div>
+                        </div>
+                        <div class="result-details" id="wand-result-details">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patronus Discovery Section -->
+        <section id="patronus" class="section">
+            <div class="container">
+                <h2 class="section-title">Patronus Discovery</h2>
+                <p class="section-description">Your patronus reflects your innermost positive feelings. Answer honestly to discover your magical guardian.</p>
+                
+                <div id="patronus-quiz" class="quiz-container">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="patronus-progress"></div>
+                        </div>
+                        <span class="progress-text" id="patronus-progress-text">Question 1 of 3</span>
+                    </div>
+                    
+                    <div class="quiz-content">
+                        <h3 class="quiz-question" id="patronus-question">Loading question...</h3>
+                        <div class="quiz-answers" id="patronus-answers">
+                            <!-- Quiz answers will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-result hidden" id="patronus-result">
+                        <h3>Your Patronus</h3>
+                        <div class="patronus-visual">
+                            <div class="patronus-glow"></div>
+                            <div class="patronus-animal" id="patronus-animal">🦌</div>
+                        </div>
+                        <div class="result-details" id="patronus-result-details">
+                            <!-- Results will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="section">
+            <div class="container">
+                <h2 class="section-title">Your Magical Profile</h2>
+                <p class="section-description">Here is your complete magical identity - your wand and patronus working in harmony.</p>
+                
+                <div class="profile-grid">
+                    <div class="profile-card">
+                        <h3>Your Wand</h3>
+                        <div class="wand-visual">
+                            <div class="wand-stick"></div>
+                            <div class="wand-handle"></div>
+                        </div>
+                        <div class="profile-details" id="profile-wand-details">
+                            <p>Complete the wand selection to see your magical wand here.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-card">
+                        <h3>Your Patronus</h3>
+                        <div class="patronus-visual">
+                            <div class="patronus-glow"></div>
+                            <div class="patronus-animal" id="profile-patronus-animal">?</div>
+                        </div>
+                        <div class="profile-details" id="profile-patronus-details">
+                            <p>Complete the patronus discovery to see your magical guardian here.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions">
+                    <button class="btn btn--primary" onclick="retakeQuizzes()">Retake Quizzes</button>
+                    <button class="btn btn--outline" onclick="shareProfile()">Share Profile</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 The Wizarding World Experience. Made with ⚡ magic</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
